@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}profil de {{ user.name }}{% endblock %}
+{% block body %}
+
+{% include "navbar/navbar.html.twig" %}
+<h1>page profil </h1>
+<p>id :{{ user.id }}</p>
+<p>email :{{ user.email }}</p>
+<p>name : {{ user.name }}</p>
+<p>lastname : {{ user.lastname }} </p>
+<p>creation du compte: {{ user.createCount.date }}</p>
+<p>vote : {{ user.votes }}</p>
+<br><br><br>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+{% block title %}Ajouter un article{% endblock %}
+{% block body %}
+
+{% if is_granted('ROLE_USER') %}
+
+{% include "navbar/navbar.html.twig" %}
+
+<h1>ADD Anonces page</h1>
+
+<form action="{{ path('createAnonces') }}" method="post">
+
+<label for="title">Titre</label>
+<input type="text" class="" id="title" name="title">
+<br>
+
+<label for="description">Description</label>
+<input type="text" class="" id="description" name="description">
+<br>
+
+<label for="prix">Prix</label>
+<input type="text" class="" id="prix" name="prix">
+<br>
+
+<label for="image">Image</label>
+<input type="text" class="" id="image" name="image">
+<br>
+
+<label for="tags">Tags</label>
+<input type="text" class="" id="tags" name="tags">
+<br>
+
+
+<button type="submit" class="">Ajouter l'Anonces</button>
+
+</form>
+{% else %}
+    {# {% redirect "{{ path('HomePage') }}" %} #}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+<a href="{{ path('HomePage') }}">home</a>
+<a href="{{ path('Anonces') }}">Anonces</a>
+
+{% if app.user %}
+<a href="{{ path('AddAnoncespage') }}">Ajouter une Anonces</a>
+{% endif %}
+
+
+
+{% if is_granted('ROLE_USER') %}
+<a href="{{ path('ProfilPage') }}"> profil de {{ app.user.username }}</a>
+<a href="{{ path('app_logout') }}">Logout</a>
+{% else %}
+<a href="{{ path('RegistrationPage') }}">Inscription</a>
+<a href="{{ path('app_login') }}">Connexion</a>
+{% endif %}
+
+
+
+
+
+{# {% for user in users %}
+<a href="{{ path('ProfilPage', { email: user.email }) }}">profil</a>
+{% endfor %} #}
+

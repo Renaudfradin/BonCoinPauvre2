@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+{% block title %}{{anonces.0.title}} - {{anonces.0.tags}} {% endblock %}
+{% block body %}
+
+{% include "navbar/navbar.html.twig" %}
+<h1>page show article</h1>
+<p> id :{{ anonces.0.id }}</p>
+<p>titre :{{ anonces.0.title }}</p>
+<p>description : {{ anonces.0.description }}</p>
+<p>prix : {{ anonces.0.prix }} </p>
+<p>image : {{ anonces.0.image }}</p>
+<p>tags : {{ anonces.0.tags }}</p>
+<p>date de publications 1: {{ anonces.0.createPost.date }}</p>
+<br><br><br>
+
+<h2>poser une question </h2>
+{% if app.user %}
+<form action="" method="post">
+
+<label for="content">content</label>
+<input type="text" class="" id="content" name="content">
+<br>
+
+<button type="submit" class="">possezr la questions</button>
+{% else %}
+    il faut etre co pour posser une question
+{% endif %}
+
+<h2>questions</h2>
+{% if questions %}
+
+<p> id :{{ questions.0.id }}</p>
+<p>content :{{ questions.0.content }}</p>
+<p>anonces id  : {{ questions.0.Anonces.id }}</p>
+<p>user id : {{ questions.0.user.id }} </p>
+<p>user email : {{ questions.0.user.email }} </p>
+<p>user name : {{ questions.0.user.name }} </p>
+<p>user lastname : {{ questions.0.user.lastname }} </p>
+
+{% endif %}
+
+
+
+
+{% endblock %}

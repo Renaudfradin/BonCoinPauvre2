@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+{% block title %}modifier l'anonce - {{ anonce.title }} {% endblock %}
+{% block body %}
+
+{% include "navbar/navbar.html.twig" %}
+
+<h1>modifier l'anonce - {{ anonce.title }} </h1>
+
+<form action="{{ path(/update/{ids}/anonces) }}" method="post">
+
+<label for="title">Titre</label>
+<input type="text" class="" id="title" name="title" value="{{ anonce.title }}">
+<br>
+
+<label for="description">Description</label>
+<input type="text" class="" id="description" name="description" value="{{ anonce.description }}">
+<br>
+
+<label for="prix">Prix</label>
+<input type="text" class="" id="prix" name="prix" value="{{ anonce.prix }}">
+<br>
+
+<label for="image">Image</label>
+<input type="text" class="" id="image" name="image" value="{{ anonce.image }}">
+<br>
+
+<label for="tags">Tags</label>
+<input type="text" class="" id="tags" name="tags" value="{{ anonce.tags }}">
+<br>
+
+
+<button type="submit" class="">modifier l'Anonces</button>
+
+</form>
+
+{% endblock %}

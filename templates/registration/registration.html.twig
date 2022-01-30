@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+{% block title %}INSCRIPTION{% endblock %}
+{% block body %}
+
+{% include "navbar/navbar.html.twig" %}
+
+<h1>INSCRIPTION page</h1>
+
+<form action="{{ path('createUsers') }}" method="post">
+
+<label for="Name">Nom</label>
+<input type="text" class="" id="Name" name="Name">
+<br>
+
+<label for="lastName">Prenom</label>
+<input type="text" class="" id="lastName" name="lastName">
+<br>
+
+<label for="email">Email</label>
+<input type="email" class="" id="email" name="email">
+<br>
+
+<label for="password">Mot de passe</label>
+<input type="password" class="" id="password" name="password">
+<br>
+
+<label for="password2">Mot de passe</label>
+<input type="password" class="" id="password2" name="password2">
+<br>
+
+<button type="submit" class="">S'inscrire</button>
+
+</form>
+
+{% endblock %}
