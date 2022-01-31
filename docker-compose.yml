@@ -1,7 +1,8 @@
 version: '3.7'
 services:
     database:
-        image: 'mysql:5.7'
+        # image: 'mysql:5.7'
+        image: 'mariadb:10.6.4'
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: main
@@ -20,7 +21,8 @@ services:
         environment:
             PMA_HOST: database
     main:
-        image: 'mysql:5.7'
+        # image: 'mysql:5.7'
+        image: 'mariadb:10.6.4'
         environment:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: main
