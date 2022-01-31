@@ -12,7 +12,7 @@
     <p>prix : {{ anonce.prix }} </p>
     <p>image : {{ anonce.image }}</p>
     <p>tags : {{ anonce.tags }}</p>
-    <p>date de publications : {{ anonce.createPost.date }}</p>
+    {# <p>date de publications : {{ anonce.createPost.date }}</p> #}
     <a href="{{ path('ShowAnonces', { ids: anonce.id }) }}">voir plus</a>
 
     {% if is_granted('ROLE_USER') %}
