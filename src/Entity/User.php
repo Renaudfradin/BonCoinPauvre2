@@ -62,9 +62,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $question;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Anonces::class, mappedBy="UserAnonces")
+     */
+    private $anonces;
+
     public function __construct()
     {
         $this->question = new ArrayCollection();
+        $this->anonces = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -228,6 +234,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($question->getUser() === $this) {
                 $question->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Anonces[]
+     */
+    public function getAnonces(): Collection
+    {
+        return $this->anonces;
+    }
+
+    public function addAnonce(Anonces $anonce): self
+    {
+        if (!$this->anonces->contains($anonce)) {
+            $this->anonces[] = $anonce;
+            $anonce->setUserAnonces($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnonce(Anonces $anonce): self
+    {
+        if ($this->anonces->removeElement($anonce)) {
+            // set the owning side to null (unless already changed)
+            if ($anonce->getUserAnonces() === $this) {
+                $anonce->setUserAnonces(null);
             }
         }
 

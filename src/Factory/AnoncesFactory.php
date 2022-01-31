@@ -45,7 +45,7 @@ final class AnoncesFactory extends ModelFactory
             'image' => self::faker()->realText(50),
             'tags' => self::faker()->realText(30),
             'createPost' => new \DateTime(sprintf('-%d', rand(0, 100))),
-            'UserCreate' => rand(1, 10),
+            'UserAnonces' => UserFactory::random(),
         ];
     }
 

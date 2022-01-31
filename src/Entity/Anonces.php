@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\AnoncesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\AnoncesRepository;
 
 /**
  * @ORM\Entity(repositoryClass=AnoncesRepository::class)
@@ -50,14 +50,15 @@ class Anonces
     private $createPost;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $UserCreate;
-
-    /**
      * @ORM\OneToMany(targetEntity=QuestionsAnonces::class, mappedBy="Anonces")
      */
     private $questionsAnonces;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="anonces")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $UserAnonces;
 
     public function __construct()
     {
@@ -141,18 +142,6 @@ class Anonces
         return $this;
     }
 
-    public function getUserCreate(): ?string
-    {
-        return $this->UserCreate;
-    }
-
-    public function setUserCreate(string $UserCreate): self
-    {
-        $this->UserCreate = $UserCreate;
-
-        return $this;
-    }
-
     /**
      * @return Collection|QuestionsAnonces[]
      */
@@ -179,6 +168,18 @@ class Anonces
                 $questionsAnonce->setAnonces(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUserAnonces(): ?User
+    {
+        return $this->UserAnonces;
+    }
+
+    public function setUserAnonces(?User $UserAnonces): self
+    {
+        $this->UserAnonces = $UserAnonces;
 
         return $this;
     }
