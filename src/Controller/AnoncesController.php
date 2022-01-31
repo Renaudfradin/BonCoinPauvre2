@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
+use Knp\Component\Pager\PaginatorInterface;
 
 class AnoncesController extends AbstractController
 {
@@ -20,7 +21,7 @@ class AnoncesController extends AbstractController
      * @return Response
      * @Route("/posts" , name="Anonces")
      */
-    public function posts(EntityManagerInterface $entityManager){
+    public function posts(EntityManagerInterface $entityManager,PaginatorInterface $paginatorInterface, Request $request){
         $repository = $entityManager->getRepository(Anonces::class);
         $anonces = $repository->findAll();
         /*404*/
@@ -28,8 +29,14 @@ class AnoncesController extends AbstractController
             return $this->render('bundles/TwigBundle/Exception/error404.html.twig',[ ]);
         }
 
+        $paginationAnonces = $paginatorInterface->paginate(
+            $anonces,
+            $request->query->getInt('page',1),
+            20
+        );
+
         return $this->render('anoncesFolder/anonces/anonces.html.twig',[
-            'anonces' => $anonces
+            'anonces' => $paginationAnonces
         ]);
     }
 
@@ -85,6 +92,8 @@ class AnoncesController extends AbstractController
             ->setImage($request->request->get('image'))
             ->setTags($request->request->get('tags'))
             ->setcreatePost(new \DateTime());
+            
+            // ->setUserAnonces(45);
 
         $entityManager->persist($anonces);
         $entityManager->flush(); //query

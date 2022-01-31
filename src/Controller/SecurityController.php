@@ -62,6 +62,7 @@ class SecurityController extends AbstractController
      */
     public function UserShow(){
         //$this->denyAccessUnlessGranted('ROLE_ADMIN');
+        
         $user = $this->getUser();
         /*404*/
         if (!$user) {
