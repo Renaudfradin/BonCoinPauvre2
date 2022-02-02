@@ -61,7 +61,7 @@ class SecurityController extends AbstractController
      * @Route("/profile" , name="ProfilPage")
      */
     public function UserShow(){
-        //$this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_USER');
         
         $user = $this->getUser();
         /*404*/
