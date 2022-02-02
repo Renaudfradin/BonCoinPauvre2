@@ -3,7 +3,10 @@
 {% block body %}
 {% include "navbar/navbar.html.twig" %}
 
-<h1>tous les articles</h1>
+<header class="headerAnnonces">
+  <h1>Annonces</h1>
+</header>
+
 
 {% for anonce in anonces %}
     <p> id :{{ anonce.id }}</p>

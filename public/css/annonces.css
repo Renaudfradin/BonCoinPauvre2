@@ -1,5 +1,7 @@
-.headerHome {
+.headerAnnonces {
   background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://images.unsplash.com/photo-1623910270913-3e0294a1c765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
-  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
 }
-
