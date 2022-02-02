@@ -4,32 +4,36 @@
 
 {% include "navbar/navbar.html.twig" %}
 
-<h1>INSCRIPTION page</h1>
-
-<form action="{{ path('createUsers') }}" method="post">
-
-<label for="Name">Nom</label>
-<input type="text" class="" id="Name" name="Name">
-<br>
-
-<label for="lastName">Prenom</label>
-<input type="text" class="" id="lastName" name="lastName">
-<br>
-
-<label for="email">Email</label>
-<input type="email" class="" id="email" name="email">
-<br>
-
-<label for="password">Mot de passe</label>
-<input type="password" class="" id="password" name="password">
-<br>
-
-<label for="password2">Mot de passe</label>
-<input type="password" class="" id="password2" name="password2">
-<br>
-
-<button type="submit" class="">S'inscrire</button>
-
-</form>
+<header class="headerRegistrationLogin">
+    <div class="containerForm">
+    <h1>INSCRIPTION</h1>
+        <form action="{{ path('createUsers') }}" method="post">       
+            <table>
+                <tr>
+                    <td>NOM</td>
+                    <td><input type="text" class="" id="Name" name="Name" required></td>
+                </tr>
+                <tr>
+                    <td>Prenom</td>
+                    <td><input type="text" class="" id="lastName" name="lastName" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" class="" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Mot de passe</td>
+                    <td><input type="password" class="" id="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td>Confirmer le mot de passe</td>
+                    <td><input type="password" class="" id="password2" name="password2" required></td>
+                </tr>
+            </table>
+            <button type="submit">S'inscrire</button>
+        </form>
+        <a href="{{ path('app_login') }}" class="caseForm" >Vous avez déjà un compte ?</a>
+    </div>
+</header>
 
 {% endblock %}

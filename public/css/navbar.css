@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    padding: 0 1.5rem;
+    align-items: center;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    transition: all 255ms ease-in-out;
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+.navbar .navbar-nav {
+    display: flex;
+    flex-grow: 1;
+}
+.navbar .navbar-nav .nav-list {
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+}
+.navbar .navbar-nav .nav-list .nav-item {
+    padding: 0 1rem;
+}
+.navbar .navbar-nav .nav-list .nav-item:nth-last-child(1) {
+    padding-right: unset;
+}
+
+article {
+    margin: 1rem 0;
+    padding: 0 1.5rem;
+}
+article p {
+    margin-top: 1rem;
+    text-indent: 50px;
+    text-align: justify;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}

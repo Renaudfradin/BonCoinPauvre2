@@ -4,8 +4,63 @@
 
 {% include "navbar/navbar.html.twig" %}
 
-<h1>Home page</h1>
-<p>Bienvenue sur le site du bon coin du pauvre </p>
+<header>
+  <h1>Leboncoin DU PAUVRE</h1>
+  <p>Si toi aussi tu refuses de dépenser des dizaines voir des centaines d'euros pour des produits d'occasion,<br>
+  PAS DE PANIQUE ! Il y a autant de rats que d'humains sur Terre, et tu fais juste partie de la classe des mammifères vertébrés ! 👍</p>
+
+  <div class="listCard">
+    <a href="{{ path('Anonces') }}">
+      <div class="card">
+        <h2>
+          Annonces
+        </h2>
+      </div>
+    </a>
+    {% if app.user %}
+      <a href="{{ path('AddAnoncespage') }}">
+        <div class="card">
+          <h2>
+            Ajouter une annonce
+          </h2>
+        </div>
+      </a>  
+    {% endif %}
+    
+    {% if is_granted('ROLE_USER') %}
+      <a href="{{ path('ProfilPage') }}">
+        <div class="card">
+          <h2>
+            Profil
+          </h2>
+        </div>
+       </a>
+      <a href="{{ path('app_logout') }}">  
+        <div class="card">
+          <h2>
+            Déconnexion
+          </h2>
+        </div>
+      </a>
+        {% else %}
+        <a href="{{ path('RegistrationPage') }}">
+          <div class="card">
+            <h2>
+              Connexion
+            </h2>
+          </div>
+        </a>
+        <a href="{{ path('app_login') }}">
+          <div class="card">
+            <h2>
+              Inscription
+            </h2>
+          </div>
+        </a>
+      {% endif %}
+  </div>
+
+</header>
 
 
 {% endblock %}
