@@ -2,8 +2,6 @@
 {% block title %}Ajouter un article{% endblock %}
 {% block body %}
 
-{% if is_granted('ROLE_USER') %}
-
 {% include "navbar/navbar.html.twig" %}
 
 <h1>ADD Anonces page</h1>
@@ -34,8 +32,4 @@
 <button type="submit" class="">Ajouter l'Anonces</button>
 
 </form>
-{% else %}
-    {# {% redirect "{{ path('HomePage') }}" %} #}
-{% endif %}
-
 {% endblock %}
