@@ -75,6 +75,7 @@ class AnoncesController extends AbstractController
      * @return Response
      */
     public function addAnoncespage(){
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('anoncesFolder/addanonce/addanonce.html.twig');
     }
 
