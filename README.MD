@@ -4,12 +4,14 @@ composer install
 
 docker-compose up -d
 
-user:root mdp:password
+acceder a phpMydmin : http://localhost:8000/  Utilisateur :root      Mot de passe : password
 
-symfony console make:migration yes
+symfony console make:migration
 
-symfony console doctrine:migration:migrate yes
+symfony console doctrine:migration:migrate 
 
-symfony console doctrine:fixtures:load  yes
+symfony console doctrine:fixtures:load  repondre YES a la question
 
-README.
+symfony serve 
+
+voir Leboncoin DU PAUVRE https://127.0.0.1:8001/
