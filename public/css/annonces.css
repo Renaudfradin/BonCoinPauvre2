@@ -3,5 +3,103 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 40vh;
+}
+
+.listAnnonces {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+  margin: 4em 10%;
+}
+
+.containerAnnonce {
+  background-color: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 150px;
+  cursor: pointer;
+  padding: 15px;
+  border: 2px solid #ffffff;
+  transition: .2s all;
+}
+
+.containerAnnonce:hover {
+  border: 2px solid #6800ff;
+  box-shadow: 10px -10px 0 -2px #dbb7fa, 10px -10px #6800ff, 20px -20px 0 -2px #dbb7fa, 20px -20px #6800ff;
+}
+
+.imageAnnonce {
+  background-color: white;
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyAnnonce {
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.bodyAnnonce h3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.bodyAnnonce .annoncePrix {
+  margin-top: 0.5em;
+  color: #6800ff;
+}
+
+.annonceDescription {
+  margin-top: 0.5em;
+  font-size: 15px;
+  font-weight: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.listBoutonsAnnonce {
+  margin-top: 1em;
+  font-size: 17px;
+  font-weight: normal;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.listBoutonsAnnonce a{
+  float: right;
+  font-weight: normal;
+  border: 2px solid #ffffff;
+  width: 130px;
+  padding: 10px 0;
+  text-align: center;
+  transition: all .2s;
+}
+
+.listBoutonsAnnonce a:first-child{
+  margin-right: 0.5em;
+}
+
+.listBoutonsAnnonce a:hover{
+  color: #6800ff;
+  border-color: #6800ff;
+  box-shadow: 5px -5px 0 -2px #dbb7fa, 5px -5px #6800ff;
+}
+
+.headerAddAnnonce {
+  background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://images.unsplash.com/photo-1623910270913-3e0294a1c765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+  height: 100vh;
 }

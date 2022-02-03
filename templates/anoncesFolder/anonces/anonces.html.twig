@@ -7,24 +7,31 @@
   <h1>Annonces</h1>
 </header>
 
-
+<div class="listAnnonces">
 {% for anonce in anonces %}
-    <p> id :{{ anonce.id }}</p>
-    <p>titre :{{ anonce.title }}</p>
-    <p>description : {{ anonce.description }}</p>
-    <p>prix : {{ anonce.prix }} </p>
-    <p>image : {{ anonce.image }}</p>
-    <p>tags : {{ anonce.tags }}</p>
-    {# <p>date de publications : {{ anonce.createPost.date }}</p> #}
-    <a href="{{ path('ShowAnonces', { ids: anonce.id }) }}">voir plus</a>
-
-    {% if is_granted('ROLE_USER') %}
-    <a href="{{ path('modifyAnoncespage', { ids: anonce.id }) }}">modifier</a>
-    <a href="{{ path('deleteAnonces', { ids: anonce.id }) }}">suprimer</a>
-    {% endif %}
-    
-    <br><br><br>
+    <a href="{{ path('ShowAnonces', { ids: anonce.id }) }}">
+        <div class='containerAnnonce'>
+            <div class="imageAnnonce">
+                <img src="{{ anonce.image }}" alt="image de l'annonce">
+            </div>
+            <div class="bodyAnnonce">
+                <h3>{{ anonce.title }}</h3>
+                <div class="annoncePrix">{{ anonce.prix }}€</div>
+                <p class="annonceDescription">
+                    {{ anonce.description }}
+                </p>
+                {# {% if is_granted('ROLE_USER') %}
+                <div class="listBoutonsAnnonce">
+                    <a href="{{ path('modifyAnoncespage', { ids: anonce.id }) }}">Modifier</a>
+                    <a href="{{ path('deleteAnonces', { ids: anonce.id }) }}">Supprimer</a>
+                </div>
+                {% endif %} #}
+            </div>
+        </div>
+    </a>
 {% endfor %}
+</div>
+
 {{ knp_pagination_render(anonces) }}
 
 {% endblock %}
