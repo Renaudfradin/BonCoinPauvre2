@@ -56,7 +56,7 @@ class Anonces
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="anonces")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $UserAnonces;
 

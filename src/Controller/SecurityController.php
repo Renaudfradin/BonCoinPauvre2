@@ -52,6 +52,8 @@ class SecurityController extends AbstractController
         
                 return $this->redirectToRoute('HomePage');
 
+            }else{
+                return $this->render('registration/registration.html.twig');
             }
         }
     }

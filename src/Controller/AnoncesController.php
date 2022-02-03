@@ -12,8 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Knp\Component\Pager\PaginatorInterface;
 
+
 class AnoncesController extends AbstractController
 {
+    const QUESTION_IMAGE = 'image\uploads\anonces';
 
     //private Security $security;
     /**
@@ -86,20 +88,43 @@ class AnoncesController extends AbstractController
      * @Route ("/createAnonces", name="createAnonces", methods={"POST"})
      */
     public function createAnonces(EntityManagerInterface $entityManager, Request $request){
-        $anonces = new Anonces();
-        $anonces->setTitle($request->request->get('title'))
-            ->setDescription($request->request->get('description'))
-            ->setPrix($request->request->get('prix'))
-            ->setImage($request->request->get('image'))
-            ->setTags($request->request->get('tags'))
-            ->setcreatePost(new \DateTime());
+        if ($request->isMethod('POST')) {
+            if (!empty($request->request->get('title')) 
+            && !empty($request->request->get('description')) 
+            && !empty($request->request->get('prix'))
+            && !empty($request->files->get('image'))
+            && !empty($request->request->get('tags'))) 
+            {
+                $anonces = new Anonces();
+                $newfiles = $request->files->get('image');
+                $destinations = $this->getParameter('kernel.project_dir').'\public\image\uploads\anonces';
+                $originalName = $newfiles->getClientOriginalName();
+
+                $baseFileName = pathinfo($originalName, PATHINFO_FILENAME);
+
+                $filesName = $baseFileName . '-'. uniqid() . '.' . $newfiles->guessExtension();
+                $newfiles->move($destinations, $filesName);
+                $chemin = "/image/uploads/anonces/".$filesName;
+
+                $anonces->setTitle($request->request->get('title'))
+                    ->setDescription($request->request->get('description'))
+                    ->setPrix($request->request->get('prix'))
+                    ->setImage($chemin)
+                    ->setTags($request->request->get('tags'))
+                    ->setcreatePost(new \DateTime());
+                //->setUserAnonces(45);
+
+                $entityManager->persist($anonces);
+                $entityManager->flush(); //query
+
+                //$this->addFlash('success','yo');
+                return $this->redirectToRoute('HomePage');
+            } else {
+                return $this->render('anoncesFolder/addanonce/addanonce.html.twig');
+            }
             
-            // ->setUserAnonces(45);
-
-        $entityManager->persist($anonces);
-        $entityManager->flush(); //query
-
-        return $this->redirectToRoute('HomePage');
+        }
+        
     }
 
     // /**

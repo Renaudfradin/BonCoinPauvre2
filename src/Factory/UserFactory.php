@@ -41,8 +41,8 @@ final class UserFactory extends ModelFactory
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
             'roles' => [],
-            'name' => self::faker()->realText(30),
-            'lastname' => self::faker()->realText(30),
+            'name' => self::faker()->name(),
+            'lastname' => self::faker()->lastName(),
             'createCount' => new \DateTime(sprintf('-%d', rand(0, 100))),
             'votes' => self::faker()->numberBetween(-10, 300),
         ];

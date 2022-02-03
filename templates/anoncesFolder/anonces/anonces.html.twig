@@ -12,7 +12,12 @@
     <a href="{{ path('ShowAnonces', { ids: anonce.id }) }}">
         <div class='containerAnnonce'>
             <div class="imageAnnonce">
-                <img src="{{ anonce.image }}" alt="image de l'annonce">
+                {# <img src="{{ anonce.image }}" alt="image de l'annonce"> #}
+                {% if anonce.image != null %}
+                <img src="{{ anonce.image }}" alt="image de l'annonce" srcset="">
+                {% else %}
+                <img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
+                {% endif %}
             </div>
             <div class="bodyAnnonce">
                 <h3>{{ anonce.title }}</h3>

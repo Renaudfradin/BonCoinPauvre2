@@ -42,8 +42,9 @@ final class AnoncesFactory extends ModelFactory
             'title' => self::faker()->realText(30),
             'description' => self::faker()->realText(200),
             'prix' => self::faker()->numberBetween(0, 1000),
-            'image' => self::faker()->realText(50),
-            'tags' => self::faker()->realText(30),
+            //'image' => self::faker()->image('public/image/uploads/anonces/', 650, 480, 'animals', true, true, 'cats', true),
+            'image' => "/image/uploads/anonces/DefaultImage.png",
+            'tags' => self::faker()->realText(10),
             'createPost' => new \DateTime(sprintf('-%d', rand(0, 100))),
             'UserAnonces' => UserFactory::random(),
         ];

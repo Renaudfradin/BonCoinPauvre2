@@ -8,7 +8,11 @@
 <p>titre :{{ anonces.0.title }}</p>
 <p>description : {{ anonces.0.description }}</p>
 <p>prix : {{ anonces.0.prix }} </p>
-<p>image : {{ anonces.0.image }}</p>
+{% if anonces.0.image != null %}
+<img src="{{ anonces.0.image }}" alt="" srcset="">
+{% else %}
+<img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
+{% endif %}
 <p>tags : {{ anonces.0.tags }}</p>
 {# <p>date de publications 1: {{ anonces.0.createPost.date }}</p> #}
 <br><br><br>
