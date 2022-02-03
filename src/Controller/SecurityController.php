@@ -14,13 +14,10 @@ use Doctrine\ORM\EntityManagerInterface;
 class SecurityController extends AbstractController
 {
     private $hasher;
-
     public function __construct(UserPasswordHasherInterface $hasher)
     {
-        //parent::__construct();
         $this->hasher = $hasher;
     }
-
 
     /**
      * @return Response
@@ -64,7 +61,6 @@ class SecurityController extends AbstractController
      */
     public function UserShow(){
         $this->denyAccessUnlessGranted('ROLE_USER');
-        
         $user = $this->getUser();
         /*404*/
         if (!$user) {
