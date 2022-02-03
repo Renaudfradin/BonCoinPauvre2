@@ -1,31 +1,33 @@
 {% extends "base.html.twig" %}
-{% block title %}modifier l'anonce - {{ anonce.title }} {% endblock %}
+{% block title %}modifier l'anonce - {{ anonce.0.title }} {% endblock %}
 {% block body %}
 
 {% include "navbar/navbar.html.twig" %}
 
-<h1>modifier l'anonce - {{ anonce.title }} </h1>
+<h1>modifier l'anonce - {{ anonce.0.title }} </h1>
 
-<form action="{{ path(/update/{ids}/anonces) }}" method="post">
+<form action="{{ path('updateAnonces', { ids: anonce.0.id }) }}" method="post" enctype="multipart/form-data">
 
 <label for="title">Titre</label>
-<input type="text" class="" id="title" name="title" value="{{ anonce.title }}">
+<input type="text" class="" id="title" name="title" value="{{ anonce.0.title }}">
 <br>
 
 <label for="description">Description</label>
-<input type="text" class="" id="description" name="description" value="{{ anonce.description }}">
+<input type="text" class="" id="description" name="description" value="{{ anonce.0.description }}">
 <br>
 
 <label for="prix">Prix</label>
-<input type="text" class="" id="prix" name="prix" value="{{ anonce.prix }}">
+<input type="text" class="" id="prix" name="prix" value="{{ anonce.0.prix }}">
 <br>
 
-<label for="image">Image</label>
-<input type="text" class="" id="image" name="image" value="{{ anonce.image }}">
+<img src="{{ anonce.0.image }}" alt="image de l'annonce" srcset="">
 <br>
+<input type="file" name="image">
+<br>
+
 
 <label for="tags">Tags</label>
-<input type="text" class="" id="tags" name="tags" value="{{ anonce.tags }}">
+<input type="text" class="" id="tags" name="tags" value="{{ anonce.0.tags }}">
 <br>
 
 

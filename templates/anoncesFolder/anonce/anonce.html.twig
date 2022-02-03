@@ -1,19 +1,19 @@
 {% extends "base.html.twig" %}
-{% block title %}{{anonces.0.title}} - {{anonces.0.tags}} {% endblock %}
+{% block title %}{{anonces.title}} - {{anonces.tags}} {% endblock %}
 {% block body %}
 
 {% include "navbar/navbar.html.twig" %}
 <h1>page show article</h1>
-<p> id :{{ anonces.0.id }}</p>
-<p>titre :{{ anonces.0.title }}</p>
-<p>description : {{ anonces.0.description }}</p>
-<p>prix : {{ anonces.0.prix }} </p>
-{% if anonces.0.image != null %}
-<img src="{{ anonces.0.image }}" alt="" srcset="">
+<p> id :{{ anonces.id }}</p>
+<p>titre :{{ anonces.title }}</p>
+<p>description : {{ anonces.description }}</p>
+<p>prix : {{ anonces.prix }} </p>
+{% if anonces.image != null %}
+<img src="{{ anonces.image }}" alt="" srcset="">
 {% else %}
 <img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
 {% endif %}
-<p>tags : {{ anonces.0.tags }}</p>
+<p>tags : {{ anonces.tags }}</p>
 {# <p>date de publications 1: {{ anonces.0.createPost.date }}</p> #}
 <br><br><br>
 
@@ -32,17 +32,17 @@
 
 <h2>questions</h2>
 {% if questions %}
-
-<p> id :{{ questions.0.id }}</p>
-<p>content :{{ questions.0.content }}</p>
-<p>anonces id  : {{ questions.0.Anonces.id }}</p>
-<p>user id : {{ questions.0.user.id }} </p>
-<p>user email : {{ questions.0.user.email }} </p>
-<p>user name : {{ questions.0.user.name }} </p>
-<p>user lastname : {{ questions.0.user.lastname }} </p>
-
+{% for questionss in questions %}
+<p> id :{{ questionss.id }}</p>
+<p>content :{{ questionss.content }}</p>
+<p>anonces id  : {{ questionss.Anonces.id }}</p>
+<p>user id : {{ questionss.user.id }} </p>
+<p>user email : {{ questionss.user.email }} </p>
+<p>user name : {{ questionss.user.name }} </p>
+<p>user lastname : {{ questionss.user.lastname }} </p>
+<br><br>
+{% endfor %}
 {% endif %}
-
 
 
 
