@@ -87,6 +87,7 @@ class AnoncesController extends AbstractController
             && !empty($request->files->get('image'))
             && !empty($request->request->get('tags'))) 
             {
+
                 $anonces = new Anonces();
                 $newfiles = $request->files->get('image');
                 $destinations = $this->getParameter('kernel.project_dir').'\public\image\uploads\anonces';
@@ -109,7 +110,6 @@ class AnoncesController extends AbstractController
                 $entityManager->persist($anonces);
                 $entityManager->flush(); //query
 
-                //$this->addFlash('success','yo');
                 return $this->redirectToRoute('HomePage');
             } else {
                 return $this->render('anoncesFolder/addanonce/addanonce.html.twig');
