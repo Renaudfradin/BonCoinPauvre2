@@ -1,4 +1,4 @@
-.headerRegistrationLogin {
+header {
     /* background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://www.wallpapertip.com/wmimgs/33-338231_galactic-render.jpg'); */
     background-position: center;
     background-repeat: no-repeat;
@@ -14,9 +14,8 @@
 }
 
 .headerAddAnnonce {
-    background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://images.unsplash.com/photo-1623910270913-3e0294a1c765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
-    height: 120vh;
-  }
+    height: 110vh;
+}
 
 .containerForm {
     background: #F6C6EA;
@@ -26,7 +25,7 @@
 }
 
 .formAddAnnonce, .formModifyAnnonce {
-    width: 50vw;
+    width: 53vw;
 }
 
 .containerForm h1{
@@ -55,6 +54,11 @@
     font-size: 1.8rem;
 }
 
+.containerForm form table tbody tr td:first-child {
+    font-family: 'VT323';
+    font-size: 30px;
+}
+
 .formAddAnnonce form table input{
     width: 39vw;
 }
@@ -79,7 +83,7 @@
 }
 
 .containerForm form button {
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 @keyframes slide {
