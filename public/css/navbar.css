@@ -4,7 +4,7 @@
     height: 80px;
     padding: 0 1.5rem;
     align-items: center;
-    background: #f3d6ff;
+    background: #F6C6EA;
     position: fixed;
     top: 0;
     transition: all 255ms ease-in-out;
@@ -13,6 +13,11 @@
     text-decoration: none;
     color: #000000;
 }
+
+.navbar a .logo {
+    max-width: 300px;
+}
+
 .navbar .navbar-nav {
     display: flex;
     flex-grow: 1;

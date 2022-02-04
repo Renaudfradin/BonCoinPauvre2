@@ -15,7 +15,7 @@
 }
 
 .containerAnnonce {
-  background-color: none;
+  background-color: #F6C6EA;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -23,13 +23,13 @@
   min-height: 150px;
   cursor: pointer;
   padding: 15px;
-  border: 2px solid #ffffff;
+  border: 3px solid #C490E4;
   transition: .2s all;
 }
 
 .containerAnnonce:hover {
-  border: 2px solid #ffffff;
-  box-shadow: 10px -10px 0 -2px #C070F8, 10px -10px #ffffff, 20px -20px 0 -2px #C070F8, 20px -20px #ffffff;
+  border: 3px solid #C490E4;
+  box-shadow: 10px -10px 0 -3px #F6C6EA, 10px -10px #C490E4, 20px -20px 0 -3px #F6C6EA, 20px -20px #C490E4;
 }
 
 .imageAnnonce {
@@ -41,6 +41,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 5px solid #000000;
+}
+
+.imageAnnonce img {
+  width: 80px;
 }
 
 .bodyAnnonce {
@@ -57,7 +62,7 @@
 }
 .bodyAnnonce .annoncePrix {
   margin-top: 0.5em;
-  color: #6800ff;
+  color: #000000;
 }
 
 .annonceDescription {
@@ -80,7 +85,3 @@
   justify-content: flex-end;
 }
 
-.headerAddAnnonce {
-  background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://images.unsplash.com/photo-1623910270913-3e0294a1c765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
-  height: 100vh;
-}

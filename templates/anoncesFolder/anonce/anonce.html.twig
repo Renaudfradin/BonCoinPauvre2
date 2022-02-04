@@ -46,7 +46,7 @@
     {% for questionss in questions %}
         <div class="listQuestions">
             <div class="userQuestionInfo">
-                <img src="" alt="Photo de l'utilisateur" class="userPic">
+                <img src="{{ asset('image/uploads/userDefaultProfilPic.jpg') }}" alt="Photo de l'utilisateur" class="userPic">
                 <p>{{ questionss.user.lastname }} {{ questionss.user.name }}</p>
             </div>
             <div class="questionBody">

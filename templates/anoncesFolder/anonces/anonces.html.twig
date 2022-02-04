@@ -12,12 +12,11 @@
     <a href="{{ path('ShowAnonces', { ids: anonce.id }) }}">
         <div class='containerAnnonce'>
             <div class="imageAnnonce">
-                {# <img src="{{ anonce.image }}" alt="image de l'annonce"> #}
-                {# {% if anonce.image != null %}
+                {% if anonce.image != null %}
                 <img src="{{ anonce.image }}" alt="image de l'annonce" srcset="">
                 {% else %}
                 <img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
-                {% endif %} #}
+                {% endif %}
             </div>
             <div class="bodyAnnonce">
                 <h3>{{ anonce.title }}</h3>
@@ -25,12 +24,6 @@
                 <p class="annonceDescription">
                     {{ anonce.description }}
                 </p>
-                {# {% if is_granted('ROLE_USER') %}
-                <div class="listBoutonsAnnonce">
-                    <a href="{{ path('modifyAnoncespage', { ids: anonce.id }) }}">Modifier</a>
-                    <a href="{{ path('deleteAnonces', { ids: anonce.id }) }}">Supprimer</a>
-                </div>
-                {% endif %} #}
             </div>
         </div>
     </a>
