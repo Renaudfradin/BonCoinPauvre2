@@ -13,14 +13,19 @@
     text-align: center;
 }
 
+.headerAddAnnonce {
+    background: linear-gradient( rgba(219, 183, 250, 0.6), rgba(219, 183, 250, 0.6) ), url('https://images.unsplash.com/photo-1623910270913-3e0294a1c765?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+    height: 120vh;
+  }
+
 .containerForm {
-    background: #ffffff;
+    background: #F6C6EA;
     padding: 2rem 3rem;
     border: 3px solid #000000;
     color: #000000;
 }
 
-.formAddAnnonce {
+.formAddAnnonce, .formModifyAnnonce {
     width: 50vw;
 }
 
@@ -50,8 +55,18 @@
     font-size: 1.8rem;
 }
 
-.formAddAnnonce form table input, textarea{
+.formAddAnnonce form table input{
     width: 39vw;
+}
+.formAddAnnonce form table textarea{
+    width: 39vw;
+}
+
+.formModifyAnnonce form table input{
+    width: 35vw;
+}
+.formModifyAnnonce form table textarea{
+    width: 35vw;
 }
 
 .containerForm form table input[type=file] {

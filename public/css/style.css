@@ -11,7 +11,12 @@
 }
 
 body {
-    background: #C070F8;
+    background-color: #FEFBF3;
+    background-image: url("../image/uploads/anonces/Chessboard\ background.png");
+    background-size: contain;
+    background-position: top;
+    background-repeat: repeat;
+    background-attachment: fixed;
     font-family: "Press_start";
 }
 
@@ -57,7 +62,7 @@ header p {
 }
 
 .card {
-  background-color: #f3d6ff;
+  background-color: #F6C6EA;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -117,6 +122,7 @@ header p {
   border: 3px solid black;
   box-shadow: 0 0 0 black;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
 .btn:hover {

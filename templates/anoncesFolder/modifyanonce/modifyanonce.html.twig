@@ -4,6 +4,38 @@
 
 {% include "navbar/navbar.html.twig" %}
 
+<header class="headerAddAnnonce">
+    <div class="containerForm formModifyAnnonce">
+    <h1>Modifier l'annonce - {{ anonce.0.title }}</h1>
+        <form action="{{ path('updateAnonces', { ids: anonce.0.id }) }}" method="post" enctype="multipart/form-data">     
+            <table>
+                <tr>
+                    <td>Titre</td>
+                    <td><input type="text" name="title" value="{{ anonce.0.title }}" required></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><textarea name="description" value="{{ anonce.0.description }}" rows="5" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>Prix</td>
+                    <td><input type="number" name="prix" value="{{ anonce.0.prix }}" required></td>
+                </tr>
+                <tr>
+                    <td>Image</td>
+                    <td><input type="file" name="image" required></td>
+                    <td><img src="{{ anonce.0.image }}" alt="image de l'annonce" srcset="" class="roundedImageAnnonce"></td>
+                </tr>
+                <tr>
+                    <td>Tags</td>
+                    <td><input type="text" class="" id="tags" name="tags" value="{{ anonce.0.tags }}" required></td>
+                </tr>
+            </table>
+            <button type="submit" class="btn">Enregistrer les modifications</button>
+        </form>
+    </div>
+</header>
+
 <h1>modifier l'anonce - {{ anonce.0.title }} </h1>
 
 <form action="{{ path('updateAnonces', { ids: anonce.0.id }) }}" method="post" enctype="multipart/form-data">
