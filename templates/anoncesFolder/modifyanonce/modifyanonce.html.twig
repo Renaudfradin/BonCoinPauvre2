@@ -36,35 +36,4 @@
     </div>
 </header>
 
-<h1>modifier l'anonce - {{ anonce.0.title }} </h1>
-
-<form action="{{ path('updateAnonces', { ids: anonce.0.id }) }}" method="post" enctype="multipart/form-data">
-
-<label for="title">Titre</label>
-<input type="text" class="" id="title" name="title" value="{{ anonce.0.title }}">
-<br>
-
-<label for="description">Description</label>
-<input type="text" class="" id="description" name="description" value="{{ anonce.0.description }}">
-<br>
-
-<label for="prix">Prix</label>
-<input type="text" class="" id="prix" name="prix" value="{{ anonce.0.prix }}">
-<br>
-
-<img src="{{ anonce.0.image }}" alt="image de l'annonce" srcset="">
-<br>
-<input type="file" name="image">
-<br>
-
-
-<label for="tags">Tags</label>
-<input type="text" class="" id="tags" name="tags" value="{{ anonce.0.tags }}">
-<br>
-
-
-<button type="submit" class="">modifier l'Anonces</button>
-
-</form>
-
 {% endblock %}
