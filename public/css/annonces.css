@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 40vh;
+  margin-top: 80px;
 }
 
 .listAnnonces {
@@ -27,12 +28,12 @@
 }
 
 .containerAnnonce:hover {
-  border: 2px solid #6800ff;
-  box-shadow: 10px -10px 0 -2px #dbb7fa, 10px -10px #6800ff, 20px -20px 0 -2px #dbb7fa, 20px -20px #6800ff;
+  border: 2px solid #ffffff;
+  box-shadow: 10px -10px 0 -2px #C070F8, 10px -10px #ffffff, 20px -20px 0 -2px #C070F8, 20px -20px #ffffff;
 }
 
 .imageAnnonce {
-  background-color: white;
+  background-color: #ffffff;
   min-width: 120px;
   min-height: 120px;
   max-width: 120px;
@@ -77,26 +78,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-.listBoutonsAnnonce a{
-  float: right;
-  font-weight: normal;
-  border: 2px solid #ffffff;
-  width: 130px;
-  padding: 10px 0;
-  text-align: center;
-  transition: all .2s;
-}
-
-.listBoutonsAnnonce a:first-child{
-  margin-right: 0.5em;
-}
-
-.listBoutonsAnnonce a:hover{
-  color: #6800ff;
-  border-color: #6800ff;
-  box-shadow: 5px -5px 0 -2px #dbb7fa, 5px -5px #6800ff;
 }
 
 .headerAddAnnonce {

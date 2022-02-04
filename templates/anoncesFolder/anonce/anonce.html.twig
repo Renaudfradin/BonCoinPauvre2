@@ -3,47 +3,58 @@
 {% block body %}
 
 {% include "navbar/navbar.html.twig" %}
-<h1>page show article</h1>
-<p> id :{{ anonces.id }}</p>
-<p>titre :{{ anonces.title }}</p>
-<p>description : {{ anonces.description }}</p>
-<p>prix : {{ anonces.prix }} </p>
-{% if anonces.image != null %}
-<img src="{{ anonces.image }}" alt="" srcset="">
-{% else %}
-<img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
-{% endif %}
-<p>tags : {{ anonces.tags }}</p>
-{# <p>date de publications 1: {{ anonces.0.createPost.date }}</p> #}
-<br><br><br>
 
-<h2>poser une question </h2>
-{% if app.user %}
-<form action="" method="post">
+<div class="pageAnnonce">
+    <div class="pageContainerAnnonce">
+        <div class="pageImageAnnonce">
+            {% if anonces.image != null %}
+                <img src="{{ anonces.image }}" alt="" srcset="">
+            {% else %}
+                <img src="{{ asset('image/uploads/anonces/DefaultImage.png') }}" alt="" srcset="">
+            {% endif %}
+        </div>
+        <div class="pageBodyAnnonce">
+            <h3>{{ anonces.title }}</h3>
+            <div class="annoncePrix">{{ anonces.prix }}€</div>
+            <h4>Description</h4>
+            <p>{{ anonces.description }}</p>
+            <h4>Tags</h4>
+            <p>{{ anonces.tags }}</p>
+            {% if is_granted('ROLE_USER') %}
+                <div class="listBoutonsAnnonce">
+                    <a href="{{ path('modifyAnoncespage', { ids: anonces.id }) }}" class="btn">Modifier</a>
+                    <a href="{{ path('deleteAnonces', { ids: anonces.id }) }}" class="btn">Supprimer</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
 
-<label for="content">content</label>
-<input type="text" class="" id="content" name="content">
-<br>
-
-<button type="submit" class="">possezr la questions</button>
-{% else %}
-    il faut etre co pour posser une question
-{% endif %}
-
-<h2>questions</h2>
-{% if questions %}
-{% for questionss in questions %}
-<p> id :{{ questionss.id }}</p>
-<p>content :{{ questionss.content }}</p>
-<p>anonces id  : {{ questionss.Anonces.id }}</p>
-<p>user id : {{ questionss.user.id }} </p>
-<p>user email : {{ questionss.user.email }} </p>
-<p>user name : {{ questionss.user.name }} </p>
-<p>user lastname : {{ questionss.user.lastname }} </p>
-<br><br>
-{% endfor %}
-{% endif %}
-
-
+<div class="pageAnnonceQuestion">
+    <h3>Commentaires :</h3>
+    {% if app.user %}
+    <form action="" method="post">
+        <div class="champCommentaire">     
+            <textarea rows="3" id="content" name="content"></textarea>
+            <button type="submit" class="btn">Commenter</button>     
+        </div>
+    </form>
+    {% else %}
+    Vous devez être connecté pour pouvoir commenter.
+    {% endif %}
+    {% if questions %}
+    {% for questionss in questions %}
+        <div class="listQuestions">
+            <div class="userQuestionInfo">
+                <img src="" alt="Photo de l'utilisateur" class="userPic">
+                <p>{{ questionss.user.lastname }} {{ questionss.user.name }}</p>
+            </div>
+            <div class="questionBody">
+                <p>{{ questionss.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% endif %}
+</div>
 
 {% endblock %}

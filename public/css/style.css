@@ -11,7 +11,7 @@
 }
 
 body {
-    background: #dbb7fa;
+    background: #C070F8;
     font-family: "Press_start";
 }
 
@@ -57,7 +57,7 @@ header p {
 }
 
 .card {
-  background-color: none;
+  background-color: #f3d6ff;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -68,17 +68,27 @@ header p {
   min-height: 220px;
   cursor: pointer;
   padding: 15px;
+  color: #ffffff;
   border: 3px solid #ffffff;
   transition: .2s all;
 }
 
 .listCard .card h2 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+  transition: .2s all;
 }
 
 .card:hover {
-  box-shadow: 10px -10px 0 -3px #ffffff, 10px -10px #ffffff;
+  box-shadow: 0.6rem 0.6rem 0 #ffffff;
 }
+
+.card:hover > h2 {
+  transition-delay: .2s;
+  background: #000000;
+  padding: 0.4em 0.8em;
+  transform: translateX(-40px);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -96,4 +106,25 @@ header p {
   font-size: 14px;
   font-family: "Archivo Black", "Archivo", sans-serif;
   font-weight: normal;
+}
+
+/* BOUTONS */
+
+.btn {
+  background: none;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  border: 3px solid black;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0.4rem 0.4rem 0 black;
+  transform: translate(-0.4rem, -0.4rem);
+}
+
+.btn:active {
+box-shadow: 0 0 0 black;
+transform: translate(0, 0);
 }

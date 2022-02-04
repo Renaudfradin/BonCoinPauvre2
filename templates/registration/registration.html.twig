@@ -5,7 +5,7 @@
 {% include "navbar/navbar.html.twig" %}
 
 <header class="headerRegistrationLogin">
-    <div class="containerForm formAddAnnonce">
+    <div class="containerForm">
     <h1>INSCRIPTION</h1>
         <form action="{{ path('createUsers') }}" method="post">       
             <table>
@@ -30,7 +30,7 @@
                     <td><input type="password" class="" id="password2" name="password2" required></td>
                 </tr>
             </table>
-            <button type="submit">S'inscrire</button>
+            <button type="submit" class="btn">S'inscrire</button>
         </form>
         <a href="{{ path('app_login') }}" class="caseForm" >Vous avez déjà un compte ?</a>
     </div>

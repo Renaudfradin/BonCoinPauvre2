@@ -1,35 +1,49 @@
 <nav class="navbar">
   <a href="{{ path('HomePage') }}" class="navbar-brand">
-    Navbar
+    Leboncoin du PAUVRE
   </a>
   <div class="navbar-nav">
     <ul class="nav-list">
-      <li class="nav-item">
-        <a href="{{ path('HomePage') }}" class="nav-link">Accueil</a>
-      </li>
-      <li class="nav-item">
-        <a href="{{ path('Anonces') }}" class="nav-link">Annonces</a>
-      </li>
-      {% if app.user %}
-        <li class="nav-item">
-            <a href="{{ path('AddAnoncespage') }}" class="nav-link">Ajouter une annonce</a>
+      <a href="{{ path('HomePage') }}">
+        <li class="btn">
+          Accueil
         </li>
+      </a>
+      <a href="{{ path('Anonces') }}">
+        <li class="btn">
+          Annonces
+        </li>
+      </a>
+      {% if app.user %}
+      <a href="{{ path('AddAnoncespage') }}">
+        <li class="btn">
+            Ajouter une annonce
+        </li>
+      </a>
       {% endif %}
 
-      {% if is_granted('ROLE_USER') %}
-        <li class="nav-item">
-            <a href="{{ path('ProfilPage') }}" class="nav-link">Bonjour {{ app.user.username }} !</a>
+      {% if is_granted('ROLE_USER') %} 
+      <a href="{{ path('app_logout') }}">
+        <li class="btn">
+            Déconnexion
         </li>
-        <li class="nav-item">
-            <a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a>
+      </a>
+      <a href="{{ path('ProfilPage') }}">
+        <li class="">
+            Bonjour {{ app.user.lastname }} !
         </li>
+      </a>
         {% else %}
-        <li class="nav-item">
-            <a href="{{ path('RegistrationPage') }}" class="nav-link">Inscription</a>
-        </li>
-        <li class="nav-item">
-            <a href="{{ path('app_login') }}" class="nav-link">Connexion</a>
-        </li>
+        <a href="{{ path('RegistrationPage') }}">
+          <li class="btn">
+              Inscription
+          </li>
+        </a>
+        <a href="{{ path('app_login') }}">
+          <li class="btn">
+              Connexion
+          </li>
+        </a>
       {% endif %}
     </ul>
   </div>
