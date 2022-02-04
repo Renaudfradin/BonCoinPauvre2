@@ -3,14 +3,31 @@
 {% block body %}
 
 {% include "navbar/navbar.html.twig" %}
-<h1>page profil </h1>
-<p>id :{{ user.id }}</p>
-<p>email :{{ user.email }}</p>
-<p>name : {{ user.name }}</p>
-<p>lastname : {{ user.lastname }} </p>
-{# <p>creation du compte: {{ user.createCount.date }}</p> #}
-<p>vote : {{ user.votes }}</p>
-<br><br><br>
 
+<header class="headerProfil">
+    <div class="containerForm">
+    <h1>PROFIL</h1>
+        <form action="{{ path('createUsers') }}" method="post">
+            <table>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" class="" id="Name" name="Name" value="{{ user.lastname }}" disabled></td>
+                </tr>
+                <tr>
+                    <td>NOM</td>
+                    <td><input type="text" class="" id="lastName" name="lastName" value="{{ user.name }}" disabled></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" class="" id="email" name="email" value="{{ user.email }}" disabled></td>
+                </tr>
+                <tr>
+                    <td>Nombre de vote</td>
+                    <td><input type="text" class="" id="vote" name="vote" value="{{ user.votes }}" disabled></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</header>
 
 {% endblock %}

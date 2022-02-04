@@ -31,7 +31,6 @@
   border: 8px solid #000000;
 }
 
-
 .pageContainerAnnonce .pageImageAnnonce img {
   width: 250px;
 }
@@ -50,8 +49,7 @@
 
 .pageBodyAnnonce .annoncePrix{
   font-size: 40px;
-  color: #FEFBF3;
-  margin: 0.5em 0;
+  color: #000000;
 }
 
 .pageBodyAnnonce p{
@@ -85,10 +83,6 @@
   align-items: flex-start;
   padding: 3em 10% 8em 10%;
   min-height: 50vh;
-}
-
-.pageAnnonceQuestion h3 {
-  font-size: 30px;
 }
 
 .pageAnnonceQuestion .champCommentaire {

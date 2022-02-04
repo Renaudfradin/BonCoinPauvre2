@@ -33,6 +33,8 @@
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
+    font-family: 'VT323';
+    font-size: 1.5rem;
 }
 
 article {

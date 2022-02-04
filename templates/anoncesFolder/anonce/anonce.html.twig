@@ -14,11 +14,11 @@
             {% endif %}
         </div>
         <div class="pageBodyAnnonce">
-            <h3>{{ anonces.title }}</h3>
-            <div class="annoncePrix">{{ anonces.prix }}€</div>
-            <h4>Description</h4>
+            <h2>{{ anonces.title }}</h2>
+            <h2 class="annoncePrix">{{ anonces.prix }}€</h2>
+            <h3>Description</h3>
             <p>{{ anonces.description }}</p>
-            <h4>Tags</h4>
+            <h3>Tags</h3>
             <p>{{ anonces.tags }}</p>
             {% if is_granted('ROLE_USER') %}
                 <div class="listBoutonsAnnonce">
@@ -31,7 +31,7 @@
 </div>
 
 <div class="pageAnnonceQuestion">
-    <h3>Commentaires :</h3>
+    <h2>Commentaires :</h2>
     {% if app.user %}
     <form action="" method="post">
         <div class="champCommentaire">     
