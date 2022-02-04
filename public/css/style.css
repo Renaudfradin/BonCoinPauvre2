@@ -137,7 +137,6 @@ header p {
 
 .card h2 {
   font-size: 14px;
-  font-family: "Archivo Black", "Archivo", sans-serif;
   font-weight: normal;
 }
 
@@ -163,3 +162,4 @@ header p {
 box-shadow: 0 0 0 black;
 transform: translate(0, 0);
 }
+
