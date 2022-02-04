@@ -25,12 +25,12 @@
                 <p class="annonceDescription">
                     {{ anonce.description }}
                 </p>
-                {% if is_granted('ROLE_USER') %}
+                {# {% if is_granted('ROLE_USER') %}
                 <div class="listBoutonsAnnonce">
                     <a href="{{ path('modifyAnoncespage', { ids: anonce.id }) }}">Modifier</a>
                     <a href="{{ path('deleteAnonces', { ids: anonce.id }) }}">Supprimer</a>
                 </div>
-                {% endif %}
+                {% endif %} #}
             </div>
         </div>
     </a>

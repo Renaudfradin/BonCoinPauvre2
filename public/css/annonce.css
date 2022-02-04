@@ -1,0 +1,139 @@
+.pageAnnonce {
+  background-image: url("../image/uploads/anonces/Chessboard\ background.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.pageContainerAnnonce {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 10%;
+}
+
+.pageImageAnnonce {
+  background-color: white;
+  min-width: 360px;
+  min-height: 360px;
+  max-width: 360px;
+  max-height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageBodyAnnonce {
+  padding-left: 2em;
+}
+
+.pageBodyAnnonce h3{
+  font-size: 30px;
+}
+
+.pageBodyAnnonce h4{
+  font-size: 22px;
+}
+
+.pageBodyAnnonce .annoncePrix{
+  font-size: 40px;
+  color: white;
+  margin: 0.5em 0;
+}
+
+.pageBodyAnnonce p{
+  font-size: 20px;
+  margin: 0.5em 0;
+}
+
+.listBoutonsAnnonce a.btn{
+  float: right;
+  background: #f3d6ff;
+  color: #000000;
+  width: 130px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.listBoutonsAnnonce a.btn:first-child{
+  margin-right: 1em;
+}
+
+.pageAnnonceQuestion {
+  background-color: #f3d6ff;
+  background-image: url("../image/uploads/anonces/Chessboard\ background\ white.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 3em 10% 8em 10%;
+  min-height: 50vh;
+}
+
+.pageAnnonceQuestion h3 {
+  font-size: 30px;
+}
+
+.pageAnnonceQuestion .champCommentaire {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.pageAnnonceQuestion .champCommentaire textarea{
+  margin: 1em 0 0 0;
+  height: 55px;
+}
+
+.pageAnnonceQuestion .champCommentaire button.btn{
+  background: #f3d6ff;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.pageAnnonceQuestion .listQuestions {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2em;
+}
+
+
+.pageAnnonceQuestion .listQuestions .userQuestionInfo{
+  text-align: center;
+}
+
+.pageAnnonceQuestion .listQuestions .userQuestionInfo p{
+  margin-top: 0.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.pageAnnonceQuestion .listQuestions .questionBody{
+  margin-left: 4em;
+  width: 50%;
+}
+
+.pageAnnonceQuestion .listQuestions .questionBody h4{
+  font-size: 22px;
+}
+
+.pageAnnonceQuestion .listQuestions .questionBody p{
+  margin-top: 0.5em;
+}

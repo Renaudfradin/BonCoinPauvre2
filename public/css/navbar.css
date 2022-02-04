@@ -4,14 +4,14 @@
     height: 80px;
     padding: 0 1.5rem;
     align-items: center;
-    background: transparent;
+    background: #f3d6ff;
     position: fixed;
     top: 0;
     transition: all 255ms ease-in-out;
 }
 .navbar a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 .navbar .navbar-nav {
     display: flex;
@@ -21,12 +21,13 @@
     margin-left: auto;
     display: flex;
     list-style: none;
+    align-items: center;
 }
-.navbar .navbar-nav .nav-list .nav-item {
-    padding: 0 1rem;
-}
-.navbar .navbar-nav .nav-list .nav-item:nth-last-child(1) {
-    padding-right: unset;
+.navbar .navbar-nav .nav-list li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
 }
 
 article {
