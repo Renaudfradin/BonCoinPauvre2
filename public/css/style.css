@@ -69,14 +69,48 @@ header {
   color: #ffffff;
   text-align: center;
 }
-header h1 {
+header h1{
   font-family: "Press_start";
   font-size: 5rem;
   margin-bottom: 0.3em;
+  animation: textflicker 0.03s infinite alternate, pause 5s infinite;
 }
+header h2{
+  font-family: "Press_start";
+  font-size: 5rem;
+  margin-bottom: 0.3em;
+  animation: textflicker 0.03s infinite alternate, pause 5s infinite;
+}
+
 header p {
   font-size: 1rem;
   font-weight: lighter;
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 5px 0 0 #ea36af, -7px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 7px 0.5px 2px #ea36af, -5px -0.5px 2px #75fa69;
+  }
+}
+
+@keyframes pause {
+  /* Other animation is visible for 25% of the time */
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  /* Other animation is hidden for 75% of the time */
+  30% {
+    text-shadow: 0px 0px 0px #ea36af, 0px 0px 0px #75fa69
+  }
+  100% {
+    text-shadow: 0px 0px 0px #ea36af, 0px 0px 0px #75fa69
+  }
 }
 
 /* CARTES */
@@ -137,7 +171,6 @@ header p {
 
 .card h2 {
   font-size: 14px;
-  font-family: "Archivo Black", "Archivo", sans-serif;
   font-weight: normal;
 }
 
@@ -163,3 +196,4 @@ header p {
 box-shadow: 0 0 0 black;
 transform: translate(0, 0);
 }
+

@@ -2,3 +2,33 @@
   font-family: 'VT323';
   font-size: 30px;
 }
+.headerHome h1 {
+  animation: textflicker 0.03s infinite alternate, pause 5s infinite;
+}
+
+@keyframes textflicker {
+  from {
+    text-shadow: 5px 0 0 #ea36af, -7px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 7px 0.5px 2px #ea36af, -5px -0.5px 2px #75fa69;
+  }
+}
+
+@keyframes pause {
+  /* Other animation is visible for 25% of the time */
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  /* Other animation is hidden for 75% of the time */
+  30% {
+    text-shadow: 0px 0px 0px #ea36af, 0px 0px 0px #75fa69
+  }
+  100% {
+    text-shadow: 0px 0px 0px #ea36af, 0px 0px 0px #75fa69
+  }
+}
+
