@@ -14,6 +14,7 @@
         "knplabs/knp-markdown-bundle": "^1.9",
         "knplabs/knp-paginator-bundle": "^5.8",
         "sensio/framework-extra-bundle": "^6.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "5.4.*",
@@ -70,6 +71,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "compile":[
+            "php bin/console doctrine:migrations:migrate",
+            "php bin/console doctrine:fixtures:load"
         ]
     },
     "conflict": {
